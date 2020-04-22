@@ -25,6 +25,8 @@ app.use(express.json());
 app.use(cors());
 
 // Serve Requests
+app.get('/', (req, res) => res.send('Server Connection Established'));
+
 app.post('/signin', (req, res) => {signin.handleSignIn(req, res, postgres, bcrypt)})
 
 app.post('/register', (req, res) => {register.handleRegister(req, res, postgres, bcrypt)})
